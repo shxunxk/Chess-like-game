@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+Chess-Like Game
+This is a simple turn-based chess-like game implemented using Node.js, WebSockets, and React. Players take turns moving their characters on a 5x5 board, each with unique movement and attack rules. The game supports real-time communication and state updates between the server and connected clients.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Three Character Types:
 
-## Available Scripts
+Pawn (P): Moves one block in a straight line in any direction (Forward, Backward, Left, Right).
+Hero1 (H1): Moves two blocks in a straight line. Can eliminate any opponent directly in its path.
+Hero2 (H2): Moves two blocks diagonally. Can eliminate any opponent directly in its path.
+Real-Time Updates: The game uses WebSockets to keep all connected clients in sync with the current game state, ensuring seamless turn-based play.
 
-In the project directory, you can run:
+Chat Feature: Players can communicate through an in-game chat system that updates in real-time with WebSockets.
 
-### `npm start`
+Installation
+Clone the Repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+git clone https://github.com/your-username/chess-like-game.git
+cd chess-like-game
+Install Dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+bash
+Copy code
+npm install
+Run the Server:
 
-### `npm test`
+bash
+Copy code
+npm start
+The server will start on port 4000, and the WebSocket server will run on port 8080.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the React App:
 
-### `npm run build`
+bash
+Copy code
+cd client
+npm start
+The React app will be available at http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+How to Play
+Setup:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+On connecting to the server, players are assigned either Player A or Player B and will automatically receive the initial game state.
+Making a Move:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Click on a character that belongs to you (denoted by 'A' or 'B' prefix).
+Use the directional buttons to move your selected character based on its movement rules.
+Turn-Based System:
 
-### `npm run eject`
+After a valid move, the turn switches to the other player. The game continues until one player eliminates all the opponent’s characters or a win condition is achieved.
+Chat:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Players can send messages using the in-game chat, which updates in real-time. Type your message and hit the "Send" button to communicate with your opponent.
+Project Structure
+Server (index.js): Manages the WebSocket server, game logic, and broadcasts the game state to connected clients.
+Client (client/src/App.js): Implements the React-based game interface, handling the game board display, user input, and chat.
+Game Logic: Controls character movement, move validation, and game state updates.
+Contributing
+If you would like to contribute to the project, please fork the repository, make your changes on a separate feature branch, and submit a pull request. All contributions are welcome!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+License
+This project is licensed under the MIT License.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This version includes clear instructions and improvements, particularly in explaining gameplay mechanics, chat functionality, and project structure. Let me know if you'd like further customization!
