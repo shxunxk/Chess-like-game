@@ -1,0 +1,220 @@
+/* Overall layout */
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.game-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Game grid styling */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 100px);
+  gap: 2px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #222; /* Default cell color */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+
+.grid-cell:hover {
+  background-color: #444;
+}
+
+.grid-cell.selected {
+  background-color: rgba(111, 224, 255, 0.2);
+  border: 2px solid #6fe0ff;
+  color: black;
+}
+
+/* Chat section styling */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.chat {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.chat-messages {
+  width: 100%;
+  height: 250px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.chat-message {
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  max-width: 80%;
+  text-align: left;
+}
+
+.user-message {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.opponent-message {
+  background-color: #f8d7da;
+  align-self: flex-start;
+}
+
+.submit {
+  display: flex;
+  margin-top: 10px;
+}
+
+.chat-container input {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.chat-container button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-container button:hover {
+  background-color: #555;
+}
+
+/* Chat options */
+.chat-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option {
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 6px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #555;
+}
+
+/* Buttons styling */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Move history styling */
+.previous-moves {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.previous-moves ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.previous-moves li {
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .App {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .chat-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cell {
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+  }
+
+  .chat-container {
+    width: 100%;
+  }
+}
